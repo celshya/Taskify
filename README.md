@@ -76,8 +76,8 @@ Taskify is a task management application that allows users to create, manage, an
 
 ## Deployment
 
-- **Frontend**: The frontend is deployed on [Vercel](https://vercel.com/).
-- **Backend**: The backend is deployed on [Render](https://render.com/).
+- **Frontend**: The frontend is deployed on [Vercel](https://taskify-frontend-gqm1y2b5w-celshyas-projects.vercel.app).
+- **Backend**: The backend is deployed on [Render](https://taskify-nh5z.onrender.com).
 
 ## API Endpoints
 
