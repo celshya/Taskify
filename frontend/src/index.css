@@ -1,0 +1,27 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F4F4F9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #008080; /* Teal blue for headings */
+  text-align: center;
+}
+
+.app-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
