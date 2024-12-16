@@ -1,6 +1,3 @@
-#!/bin/bash
-
-cat << EOF
 
 # Taskify - Task Management Application
 
@@ -94,4 +91,4 @@ Taskify is a task management application that allows users to create, manage, an
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-EOF
+
