@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { getTasks, createTask, deleteTask, updateTask } from '../services/api';
+import { getTasks, createTask, deleteTask } from '../services/api';
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
 
 function Home() {
   const [tasks, setTasks] = useState([]);
-  const [taskToEdit, setTaskToEdit] = useState(null);
+  const [statusFilter, setStatusFilter] = useState('');
+  const [priorityFilter, setPriorityFilter] = useState('');
 
-  // Fetch tasks on component load
+  // Fetch tasks on component load and when filters change
   useEffect(() => {
     fetchTasks();
-  }, []);
+  }, [statusFilter, priorityFilter]);
 
-  // Fetch all tasks from API
+  // Fetch tasks from API with filters applied
   const fetchTasks = async () => {
     try {
-      const { data } = await getTasks();
+      const queryParams = new URLSearchParams();
+      if (statusFilter) queryParams.append('status', statusFilter);
+      if (priorityFilter) queryParams.append('priority', priorityFilter);
+
+      const { data } = await getTasks(queryParams.toString());
       setTasks(data);
     } catch (error) {
       console.error('Failed to fetch tasks:', error);
     }
   };
 
-  // Create a new task and refresh the task list
+  // Handle task creation
   const handleCreateTask = async (task) => {
     try {
       await createTask(task);
@@ -32,18 +37,7 @@ function Home() {
     }
   };
 
-  // Update an existing task
-  const handleUpdateTask = async (id, task) => {
-    try {
-      await updateTask(id, task);  // API call to update the task
-      fetchTasks();
-      setTaskToEdit(null);  // Clear the task to edit after update
-    } catch (error) {
-      console.error('Failed to update task:', error);
-    }
-  };
-
-  // Delete a task and refresh the task list
+  // Handle task deletion
   const handleDeleteTask = async (id) => {
     try {
       await deleteTask(id);
@@ -53,24 +47,34 @@ function Home() {
     }
   };
 
-  // Set task to edit
-  const handleEditTask = (task) => {
-    setTaskToEdit(task);
-  };
-
   return (
     <div className='app-container'>
       <h1>Taskify</h1>
-      <TaskForm 
-        onAddTask={handleCreateTask} 
-        taskToEdit={taskToEdit} 
-        onUpdateTask={handleUpdateTask}
-      />
-      <TaskList 
-        tasks={tasks} 
-        onDeleteTask={handleDeleteTask} 
-        onEditTask={handleEditTask}  // Pass edit handler to TaskList
-      />
+      <TaskForm onAddTask={handleCreateTask} />
+
+      {/* Filters */}
+      <div className="filters">
+        <select
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+        >
+          <option value="">All Statuses</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <select
+          value={priorityFilter}
+          onChange={(e) => setPriorityFilter(e.target.value)}
+        >
+          <option value="">All Priorities</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+
+      <TaskList tasks={tasks} onDeleteTask={handleDeleteTask} />
     </div>
   );
 }
