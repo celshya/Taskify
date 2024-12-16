@@ -1,93 +1,97 @@
 #!/bin/bash
 
-echo "# Taskify - Task Management Application"
-echo ""
-echo "Taskify is a task management application that allows users to create, manage, and track their tasks. It helps users stay organized by providing features such as task creation, updates, deletions, and filtering tasks based on different criteria."
-echo ""
-echo "## Features"
-echo ""
-echo "- **Create tasks**: Add new tasks with title, description, due date, and priority."
-echo "- **View tasks**: View all tasks in a list format."
-echo "- **Update tasks**: Edit tasks to modify the title, description, priority, or status."
-echo "- **Delete tasks**: Remove completed or irrelevant tasks."
-echo "- **Filter tasks**: Filter tasks based on status (e.g., Pending, Completed) or priority (Low, Medium, High)."
-echo ""
-echo "## Technologies Used"
-echo ""
-echo "- **Frontend**: React"
-echo "- **Backend**: Node.js, Express.js"
-echo "- **Database**: MongoDB"
-echo "- **Authentication (Optional)**: User authentication for managing tasks."
-echo ""
-echo "## Project Structure"
-echo ""
-echo "### Frontend (React)"
-echo ""
-echo "- **TaskForm**: Component for adding new tasks."
-echo "- **TaskList**: Displays all tasks and allows for deletion."
-echo "- **TaskItem**: Individual task display and action buttons."
-echo "- **App**: Main component that connects the frontend to the backend and manages state."
-echo ""
-echo "### Backend (Node.js/Express)"
-echo ""
-echo "- **Routes**: "
-echo "  - `POST /tasks`: Create a new task."
-echo "  - `GET /tasks`: Retrieve all tasks."
-echo "  - `GET /tasks/:id`: Retrieve a specific task."
-echo "  - `PUT /tasks/:id`: Update a task."
-echo "  - `DELETE /tasks/:id`: Delete a task."
-echo ""
-echo "### Database"
-echo ""
-echo "- MongoDB is used to store task details, such as title, description, due date, and priority."
-echo ""
-echo "## Installation"
-echo ""
-echo "### Frontend"
-echo ""
-echo "1. Clone the repository:"
-echo "   \`git clone https://github.com/celshya/taskify.git\`"
-echo ""
-echo "2. Navigate to the frontend directory:"
-echo "   \`cd taskify/frontend\`"
-echo ""
-echo "3. Install dependencies:"
-echo "   \`npm install\`"
-echo ""
-echo "4. Run the application:"
-echo "   \`npm start\`"
-echo ""
-echo "### Backend"
-echo ""
-echo "1. Clone the repository:"
-echo "   \`git clone https://github.com/celshya/taskify.git\`"
-echo ""
-echo "2. Navigate to the backend directory:"
-echo "   \`cd taskify/backend\`"
-echo ""
-echo "3. Install dependencies:"
-echo "   \`npm install\`"
-echo ""
-echo "4. Set up environment variables (\`.env\` file):"
-echo "   - **MONGO_URI**: Your MongoDB connection URI."
-echo "   - **PORT**: Port for the backend server (default is \`5000\`)."
-echo ""
-echo "5. Run the server:"
-echo "   \`npm start\`"
-echo ""
-echo "## Deployment"
-echo ""
-echo "- **Frontend**: The frontend is deployed on [Vercel](https://vercel.com/)."
-echo "- **Backend**: The backend is deployed on [Render](https://render.com/)."
-echo ""
-echo "## API Endpoints"
-echo ""
-echo "- **POST /tasks**: Create a new task."
-echo "- **GET /tasks**: Get all tasks."
-echo "- **GET /tasks/:id**: Get a task by ID."
-echo "- **PUT /tasks/:id**: Update a task."
-echo "- **DELETE /tasks/:id**: Delete a task."
-echo ""
-echo "## License"
-echo ""
-echo "This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details."
+cat << EOF
+
+# Taskify - Task Management Application
+
+Taskify is a task management application that allows users to create, manage, and track their tasks. It helps users stay organized by providing features such as task creation, updates, deletions, and filtering tasks based on different criteria.
+
+## Features
+
+- **Create tasks**: Add new tasks with title, description, due date, and priority.
+- **View tasks**: View all tasks in a list format.
+- **Update tasks**: Edit tasks to modify the title, description, priority, or status.
+- **Delete tasks**: Remove completed or irrelevant tasks.
+- **Filter tasks**: Filter tasks based on status (e.g., Pending, Completed) or priority (Low, Medium, High).
+
+## Technologies Used
+
+- **Frontend**: React
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication (Optional)**: User authentication for managing tasks.
+
+## Project Structure
+
+### Frontend (React)
+
+- **TaskForm**: Component for adding new tasks.
+- **TaskList**: Displays all tasks and allows for deletion.
+- **TaskItem**: Individual task display and action buttons.
+- **App**: Main component that connects the frontend to the backend and manages state.
+
+### Backend (Node.js/Express)
+
+- **Routes**: 
+  - `POST /tasks`: Create a new task.
+  - `GET /tasks`: Retrieve all tasks.
+  - `GET /tasks/:id`: Retrieve a specific task.
+  - `PUT /tasks/:id`: Update a task.
+  - `DELETE /tasks/:id`: Delete a task.
+
+### Database
+
+- MongoDB is used to store task details, such as title, description, due date, and priority.
+
+## Installation
+
+### Frontend
+
+1. Clone the repository:
+   \`git clone https://github.com/celshya/taskify.git\`
+
+2. Navigate to the frontend directory:
+   \`cd taskify/frontend\`
+
+3. Install dependencies:
+   \`npm install\`
+
+4. Run the application:
+   \`npm start\`
+
+### Backend
+
+1. Clone the repository:
+   \`git clone https://github.com/celshya/taskify.git\`
+
+2. Navigate to the backend directory:
+   \`cd taskify/backend\`
+
+3. Install dependencies:
+   \`npm install\`
+
+4. Set up environment variables (\`.env\` file):
+   - **MONGO_URI**: Your MongoDB connection URI.
+   - **PORT**: Port for the backend server (default is \`5000\`).
+
+5. Run the server:
+   \`npm start\`
+
+## Deployment
+
+- **Frontend**: The frontend is deployed on [Vercel](https://vercel.com/).
+- **Backend**: The backend is deployed on [Render](https://render.com/).
+
+## API Endpoints
+
+- **POST /tasks**: Create a new task.
+- **GET /tasks**: Get all tasks.
+- **GET /tasks/:id**: Get a task by ID.
+- **PUT /tasks/:id**: Update a task.
+- **DELETE /tasks/:id**: Delete a task.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+EOF
